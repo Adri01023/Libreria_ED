@@ -18,6 +18,18 @@ public class Book {
 	    public String getAuthor() {
 	        return author;
 	    }
+	    
+	    public void listBooks() {
+	        if (books.isEmpty()) {
+	            System.out.println("La biblioteca está vacía");
+	            return;
+	        }
+
+	        System.out.println("Libros ordenados por título:");
+	        books.stream()
+	             .sorted(Comparator.comparing(Book::getTitle, String.CASE_INSENSITIVE_ORDER))
+	             .forEach(System.out::println);
+	    }
 
 	    @Override
 	    public String toString() {
