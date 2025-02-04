@@ -1,8 +1,7 @@
-package Tema7;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
@@ -11,8 +10,6 @@ public class Library {
     public Library() {
         books = new ArrayList<>();
     }
-
-    // Método para agregar libros con validación
     public boolean addBook(Book book) {
         if (book == null) {
             throw new IllegalArgumentException("El libro no puede ser null");
@@ -32,7 +29,7 @@ public class Library {
         return true;
     }
 
-    // Método modificado para listar libros ordenados por título
+   
     public void listBooks() {
         if (books.isEmpty()) {
             System.out.println("La biblioteca está vacía");
@@ -53,18 +50,4 @@ public class Library {
         // Mostrar los libros ordenados
         System.out.println("Lista de libros ordenados por título:");
         for (Book book : sortedBooks) {
-            System.out.println(book);
-        }
-    }
-
-    // Funcionalidad para buscar un libro por título
-	    public Book findBookByTitle(String title) {
-	        for (Book book : books) {
-	            if (book.getTitle().equalsIgnoreCase(title)) {
-	                return book;
-	            }
-	        }
-	        return null;
-	    }
-	}
 
